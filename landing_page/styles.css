@@ -1,0 +1,257 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    box-sizing: border-box;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: white;
+}
+.header a {
+    text-decoration: none;
+    margin-left: 20px;
+    color:hsl(0, 0%,41%);
+}
+
+.first{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 600px;
+}
+
+.inner{
+    margin: 0%;
+    padding: 4%;
+    width: 300px;
+}
+span a {
+    border: 1px solid #000;
+    border-radius: 10px;
+    cursor: default;
+    padding: 0.7em;
+    -moz-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
+    -webkit-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
+    -ms-transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
+    transition: background-color 0.2s ease, border-top-left-radius 0.2s ease, border-top-right-radius 0.2s ease, padding 0.2s ease;
+}
+.inner, .second{
+    font-size: 18px;
+    font-family: "Epilogue";
+}
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    flex-direction: row;
+}
+.main-text {
+    max-width: 500px;
+}
+.main-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-family: "Epilogue";
+    color:hsl(0, 0%, 8%);
+}
+.main-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: hsl(0, 0%, 41%);
+    font-family: "Epilogue";
+
+}
+.main-text button {
+    padding: 15px 30px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.page_img {
+    max-width: 400px;
+    object-fit: cover;
+}
+
+.partners {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background-color: white;
+}
+.partners img {
+    margin: 0 20px;
+}
+
+.logo{
+    color: hsl(0, 0%, 8%);
+    font-weight: 800;
+    font-family: "Epilogue";
+    font-size: xx-large;
+}
+
+
+/* footer*/
+.intro-email{
+    max-width:90%;
+    margin:0 auto;
+    background-color:hsl(0, 0%, 41%);
+    position:relative;
+   top:200px;
+   padding-top:40px;
+   padding-right:30px;
+   padding-left:30px;
+   padding-bottom:40px;
+   border-radius:5px;
+ 
+}
+.intro-email{
+    max-width:60%;
+}
+
+.intro-email h5{
+    font-size:16px;
+    color:hsl(0, 0%, 100%);
+    font-weight:700;
+    text-align:center;
+
+}
+.intro-email p{
+    font-size:14px;
+    color:hsl(0, 0%, 100%);
+    opacity:0.8;
+    line-height:1.5;
+    margin:20px 0 20px 0;
+    text-align:center;
+}
+input[type=email]{
+   padding:15px;
+   width:100%;
+   border-radius:50px;
+   outline:none;
+   border:none;
+   width: 60%;
+}
+.sign-btn{
+    font-size:12px;
+    cursor:pointer;
+   
+}
+
+footer{
+    background-color:hsl(0, 0%, 98%);
+    padding:120px 0;
+}
+
+.footer-container{
+    padding:120px 0;
+}
+
+    .footer-container{
+        display:flex;
+        justify-content:space-evenly;
+        /* align-items:center; */
+    }
+
+    .address{
+        max-width:400px;
+    }
+
+.address{
+    padding:20px;
+}
+.footer-logo{
+    max-width:40% !important;
+    padding:10px;
+}
+.footer-logo img {
+    max-width:100% !important;
+}
+.address p{
+    font-size:14px;
+    color:hsl(0, 0%, 100%);
+    line-height:1.5;
+    opacity:0.8;
+   
+ 
+}
+.locate{
+    display:flex;
+    margin-top:30px;
+}
+.fa-location-dot{
+    margin-right:20px;
+    color:hsl(0, 0%, 100%);
+}
+.contact{
+    padding-left:20px;
+}
+.contact p {
+    color:hsl(0, 0%, 100%);
+    line-height:3;
+}
+.contact-image{
+    margin-right:10px;
+}
+
+.about-us{
+    padding-left:20px;
+}
+.about-us h5{
+color:hsl(0, 0%, 100%);
+font-size:14px;
+font-weight:700;
+padding-top:30px;
+}
+.about-us a{
+    display:block;
+    padding-top:20px;
+    font-size:14px;
+}
+.contact-us{
+    padding-left:20px;
+}
+.contact-us h5{
+    color:hsl(0, 0%, 100%);
+    font-size:14px;
+    font-weight:700;
+    padding-top:30px;
+    }
+
+        .contact-us h5{
+            padding-top:0;
+        }
+
+    .contact-us a{
+        display:block;
+        padding-top:20px;
+        font-size:14px;
+    }
+    .social-icon{
+       /* position:relative;
+       max-width:35%;
+       left:33%;
+       top:220px; */
+     
+    }
+    .social-icon a{
+        padding:5px;
+    }
+    .social-icon a i{
+        padding:8px;
+        border:1px solid #ffffff;
+        border-radius:50px;
+        font-size:10px;
+    }
+    .social-icon a i:hover{
+        border:1px solid hsl(176, 68%, 64%);
+    }
+
+       
