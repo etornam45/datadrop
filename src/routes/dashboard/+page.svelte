@@ -31,7 +31,7 @@
 				{#if $activeProject}
 					<h1 class="text-base font-semibold">{$activeProject.name}</h1>
 				{:else}
-					<h1 class="text-base font-semibold">No Project Selected</h1>
+					<h1 class="text-base font-semibold">No file uploaded</h1>
 				{/if}
 			</div>
 

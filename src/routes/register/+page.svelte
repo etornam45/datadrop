@@ -2,22 +2,35 @@
 	import { goto } from '$app/navigation';
 	import { api } from '$lib';
 
-	let name = '';
-	let email = '';
-	let password = '';
+let name = '';
+  let email = '';
+  let password = '';
+  let successMessage = '';
+  let errorMessage = '';
 
-	function handleRegister() {
-		api.post('/user/register', { name, email, password })
-			.then((response) => {
-				goto('/login');
-				console.log('Registration successful:', response);
-			})
-			.catch((error) => {
-				console.error('Registration failed:', error);
-			});
-		console.log('Registering:', { name, email, password });
-	}
+  function handleRegister() {
+    api.post('/user/register', { name, email, password })
+      .then((response) => {
+        localStorage.setItem('user', JSON.stringify({ name, email }));
+        
+        
+        successMessage = 'Registration successful! Redirecting to login page...';
+
+        setTimeout(() => {
+          goto('/login');
+        }, 1000); 
+        
+      })
+      .catch((error) => {
+        errorMessage = 'Registration failed. Please try again.';
+        console.error('Registration failed:', error);
+      });
+    
+    console.log('Registering:', { name, email, password });
+  }
 </script>
+
+
 
 <main class="flex h-screen bg-gray-100">
 	<div class="m-auto bg-white rounded-lg shadow-md flex">
@@ -58,11 +71,18 @@
 				</div>
 				<button type="submit" class="w-full bg-black text-white p-2 rounded">Register</button>
 			</form>
-
+			{#if successMessage}
+			<div class="success-message">{successMessage}</div>
+			{/if}
+	
+			{#if errorMessage}
+			<div class="error-message">{errorMessage}</div>
+			{/if}
 			<p class="mt-6 text-center text-sm text-gray-600">
 				Already have an account? <a href="/login" class="text-blue-600">Login</a>
 			</p>
 		</div>
+
 
 		<!-- Right side: Illustration -->
 		<div class="bg-blue-100 p-8 w-96 flex items-center justify-center">
@@ -91,6 +111,7 @@
 			</svg>
 		</div>
 	</div>
+	
 </main>
 
 <style>

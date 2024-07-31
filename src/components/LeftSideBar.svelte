@@ -52,7 +52,7 @@
 
 		<div class="w-full">
 			<div class="w-full flex justify-between items-center">
-				<p class="font-semibold">PROJECTS</p>
+				<p class="font-semibold">Files</p>
 				<NewProject />
 			</div>
 

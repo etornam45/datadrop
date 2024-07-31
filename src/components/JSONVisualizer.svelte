@@ -123,7 +123,7 @@
 
 <style>
 	.json-visualizer {
-		font-family: Arial, sans-serif;
+		font-family: "Epilogue";
 		margin-bottom: 1em;
 	}
 	table {

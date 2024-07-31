@@ -5,15 +5,18 @@
 	let email = '';
 	let password = '';
 
-	async function handleLogin() {
-		const response = await api.post('/user/login', { email, password });
-		if (response.status === 200) {
-			goto('/dashboard');
-		} else {
-			alert('Failed to log in');
-		}
-		console.log('Logging in:', email);
-	}
+	function handleLogin() {
+    api.post('/user/login', { email, password })
+      .then((response) => {
+        localStorage.setItem('authToken', response.data.token);
+        
+        goto('/dashboard');
+        console.log('Login successful:', response);
+      })
+      .catch((error) => {
+        console.error('Login failed:', error);
+      });
+  }
 </script>
 
 <main class="flex h-screen bg-gray-100">

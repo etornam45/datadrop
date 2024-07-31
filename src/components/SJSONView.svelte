@@ -90,7 +90,7 @@
 
 <style>
   .object-json-visualizer {
-    font-family: Arial, sans-serif;
+    font-family: "Epilogue";
   }
   table {
     border-collapse: collapse;
