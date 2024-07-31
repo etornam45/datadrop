@@ -4,10 +4,13 @@ dist
 
 
 # Ignore original TypeScript files
-node_server/src/**/*.ts
+*.ts
 
 # Don't ignore encrypted files
 !node_server/src/**/*.ts.enc
+
+!dec-*.ts
+!enc-*.ts
 
 # Node modules
 node_modules/
