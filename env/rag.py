@@ -25,7 +25,7 @@ llm = genai.GenerativeModel('gemini-1.5-flash')
 
 def create_rag_system():
 
-    chunk_store()
+    retriever = chunk_store()
     
     # Context reconstruction prompt
     contextualized_system_prompt = (
@@ -39,7 +39,7 @@ def create_rag_system():
     contextualized_prompt_template = ChatPromptTemplate.from_messages([
         ('system', contextualized_system_prompt),
         MessagesPlaceholder(variable_name='chat_history'),
-        ('human', '{question}'),
+        ('human', '{input}'),
     ])
 
     # Create history-aware retriever
@@ -62,7 +62,7 @@ def create_rag_system():
     prompt_template = ChatPromptTemplate.from_messages([
         ("system", system_prompt),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("human", "{question}"),
+        ("human", "{input}"),
     ])
 
     # Create the RAG chain
