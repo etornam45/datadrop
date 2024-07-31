@@ -3,5 +3,10 @@
     "scripts": {
         "encrypt": "node node_server/scripts/enc-src.js",
         "decrypt": "node node_server/scripts/dec-src.js"
+    },
+    "dependencies": {
+        "@google/generative-ai": "^0.16.0",
+        "@pinecone-database/pinecone": "^3.0.0",
+        "llamaindex": "^0.5.12"
     }
 }
