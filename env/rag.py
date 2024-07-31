@@ -71,8 +71,6 @@ def rag_system():
     return rag_qa_chain
 
 
-print('done')
-
 
 
 
