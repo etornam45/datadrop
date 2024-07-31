@@ -15,30 +15,30 @@ if (!SECRET_KEY) {
 // Hash the secret key to ensure it's always the correct length
 const HASHED_KEY = crypto.createHash('sha256').update(String(SECRET_KEY)).digest('base64').substr(0, 32);
 
-function encrypt(text) {
+function decrypt(text) {
     try {
-        const iv = crypto.randomBytes(16);
-        const cipher = crypto.createCipheriv('aes-256-cbc', Buffer.from(HASHED_KEY), iv);
-        let encrypted = cipher.update(text);
-        encrypted = Buffer.concat([encrypted, cipher.final()]);
-        return { 
-            iv: iv.toString('hex'), 
-            encryptedData: encrypted.toString('hex') 
-        };
+        let { iv, encryptedData } = JSON.parse(text);
+        iv = Buffer.from(iv, 'hex');
+        let encryptedText = Buffer.from(encryptedData, 'hex');
+        let decipher = crypto.createDecipheriv('aes-256-cbc', Buffer.from(HASHED_KEY), iv);
+        let decrypted = decipher.update(encryptedText);
+        decrypted = Buffer.concat([decrypted, decipher.final()]);
+        return decrypted.toString();
     } catch (error) {
-        console.error('Encryption error:', error);
+        console.error('Decryption error:', error);
         throw error;
     }
 }
 
-function encryptFile(filePath) {
+function decryptFile(filePath) {
     try {
-        const content = fs.readFileSync(filePath, 'utf8');
-        const encrypted = encrypt(content);
-        fs.writeFileSync(filePath + '.enc', JSON.stringify(encrypted));
-        console.log(`Encrypted ${filePath}`);
+        const encryptedContent = fs.readFileSync(filePath, 'utf8');
+        const decrypted = decrypt(encryptedContent);
+        const originalFilePath = filePath.slice(0, -4); // Remove '.enc' extension
+        fs.writeFileSync(originalFilePath, decrypted);
+        console.log(`Decrypted ${filePath}`);
     } catch (error) {
-        console.error(`Error encrypting ${filePath}:`, error);
+        console.error(`Error decrypting ${filePath}:`, error);
     }
 }
 
@@ -50,8 +50,8 @@ function walkDir(dir) {
             const stat = fs.statSync(filePath);
             if (stat.isDirectory()) {
                 walkDir(filePath);
-            } else if (stat.isFile() && path.extname(file) === '.ts' && file !== 'decrypt.ts') {
-                encryptFile(filePath);
+            } else if (stat.isFile() && path.extname(file) === '.enc') {
+                decryptFile(filePath);
             }
         });
     } catch (error) {
@@ -63,8 +63,8 @@ function walkDir(dir) {
 try {
     const srcDir = path.join(process.cwd(), 'node_server/src');
     walkDir(srcDir);
-    console.log('Encryption process completed successfully.');
+    console.log('Decryption process completed successfully.');
 } catch (error) {
-    console.error('An error occurred during the encryption process:', error);
+    console.error('An error occurred during the decryption process:', error);
     process.exit(1);
 }
