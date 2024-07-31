@@ -1,0 +1,7 @@
+{
+    "name": "datadrop",
+    "scripts": {
+        "encrypt": "node node_server/scripts/enc-src.js",
+        "decrypt": "node node_server/scripts/dec-src.js"
+    }
+}
