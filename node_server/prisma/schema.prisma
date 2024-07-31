@@ -20,6 +20,7 @@ model User {
   name     String?
   password String
   Project  Project[]
+  Rules    Rules[]
 }
 
 model Project {
@@ -28,7 +29,7 @@ model Project {
   description String?
   ownerId     String
   tables      String?
-  owner       User?       @relation(fields: [ownerId], references: [id])
+  owner       User?      @relation(fields: [ownerId], references: [id], onDelete: Cascade)
   Document    Document[]
 
   @@index([ownerId], map: "ownerId")
@@ -40,5 +41,13 @@ model Document {
   content   String
   projectId String
   filepath  String
-  project   Project @relation(fields: [projectId], references: [id])
+  project   Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Rules {
+  id     String @id @default(cuid())
+  name   String
+  value  String
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
