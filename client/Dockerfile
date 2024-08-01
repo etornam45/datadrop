@@ -13,8 +13,10 @@ RUN npm install
 # Copy the rest of the application code
 COPY client/ .
 
+RUN npm run build
+
 # Expose the port the app runs on
-EXPOSE 5173
+EXPOSE 4173
 
 # Start the application
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+CMD ["npm", "run", "preview"]
