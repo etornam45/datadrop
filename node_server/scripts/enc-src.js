@@ -61,7 +61,14 @@ function walkDir(dir) {
 
 // Main execution
 try {
-    const srcDir = path.join(process.cwd(), 'node_server/src');
+    let srcDir = path.join(process.cwd(), 'node_server/src') 
+    
+    // check if directory exists
+    if (!fs.existsSync(srcDir)) {
+        // throw new Error('Source directory does not exist');
+        srcDir = path.join(process.cwd(), 'src');
+    }
+
     walkDir(srcDir);
     console.log('Encryption process completed successfully.');
 } catch (error) {
