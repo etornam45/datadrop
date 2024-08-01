@@ -36,7 +36,9 @@
 			</div>
 
 			<div class="p-1 px-2 rounded-[8px] bg-[#ddf9f1]">
-				<h1 class="text-base font-semibold">Export Data</h1>
+				<h1 class="text-base font-semibold">
+					<ExtractButton />
+				</h1>
 			</div>
 		</div>
 		<div class="p-4 bg-[#ddf9f1] rounded-[8px] h-[calc(100%-300px)] overflow-scroll">
