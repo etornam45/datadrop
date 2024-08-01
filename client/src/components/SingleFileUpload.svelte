@@ -118,7 +118,7 @@
 		{/if}
 	</label>
 	<Button
-		class="bg-[#D08E6A] text-white p-2 w-full mt-4 hover:bg-[#D08E6A]/30 hover:text-white"
+		class="bg-[#6ad0ae] text-white p-2 w-full mt-4 hover:bg-[#6ad0ae]/30 hover:text-white"
 		disabled={!file || !$dataProcessing == null}
 		type="submit"
 	>
@@ -135,7 +135,7 @@
 <style>
 	.drag-area {
 		display: flex;
-		border: 2px dashed #d08e6a;
+		border: 2px dashed #6ad0b7;
 		padding: 20px;
 		text-align: center;
 		transition: background-color 0.3s;
@@ -145,6 +145,6 @@
 		border-radius: 10px;
 	}
 	.drag-area.active {
-		background-color: #d08e6a;
+		background-color: #6ad0ac;
 	}
 </style>

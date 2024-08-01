@@ -25,7 +25,7 @@
 	}
 </script>
 
-<aside class="min-w-[350px] p-2 flex flex-col items-center justify-between gap-4 bg-[#b3d7af]">
+<aside class="min-w-[350px] max-w-[350px] p-2 flex flex-col items-center justify-between gap-4 bg-[#b3d7af]">
 	<div class="w-full">
 		<div class="w-full flex justify-between items-center">
 			<Logo />

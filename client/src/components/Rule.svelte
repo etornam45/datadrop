@@ -87,7 +87,7 @@
 				on:addField={() => addField(field)}
 			/>
 		{/each}
-		<Button type="button" class="bg-[#6B4A38] text-white p-2" on:click={() => addField()}
+		<Button type="button" class="bg-[#386b5c] text-white p-2" on:click={() => addField()}
 			>Add Field</Button
 		>
 	</form>

@@ -133,7 +133,7 @@
 	</label>
 
 	<Button
-		class="bg-[#D08E6A] text-white p-2 w-full mt-4 hover:bg-[#D08E6A]/30 hover:text-white"
+		class="bg-[#6ad0ae] text-white p-2 w-full mt-4 hover:bg-[#6ad0ae]/30 hover:text-white"
 		disabled={!files ||
 			files.length === 0 ||
 			$dataProcessing == 'compressing' ||
@@ -157,7 +157,7 @@
 <style>
 	.drag-area {
 		display: flex;
-		border: 2px dashed #d08e6a;
+		border: 2px dashed #6ad0b0;
 		padding: 20px;
 		text-align: center;
 		transition: background-color 0.3s;

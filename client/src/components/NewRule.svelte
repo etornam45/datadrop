@@ -19,7 +19,7 @@
 			<Plus width="1.5rem" height="1.5rem" />
 		</button>
 	</Dialog.Trigger>
-	<Dialog.Content class="shadow-none bg-[#D9D9D9] h-max">
+	<Dialog.Content class="shadow-none bg-[#dfece7] h-max">
 		<Dialog.Header>
 			<Dialog.Title>Create a new rules</Dialog.Title>
 			<Dialog.Description class="text-slate-600">
@@ -31,10 +31,10 @@
 				bind:value={ruleName}
 				type="text"
 				placeholder="Rule Name"
-				class="w-full p-3 my-3 bg-[#F9F5F5] rounded-[8px]"
+				class="w-full p-3 my-3 bg-[#f5f9f8] rounded-[8px]"
 			/>
 			<Rule />
-			<button on:click={saveRule}  class="w-full p-3 bg-[#6B4A38] text-white rounded-[8px] mt-3">Save</button>
+			<button on:click={saveRule}  class="w-full p-3 bg-[#386b5b] text-white rounded-[8px] mt-3">Save</button>
 		</div>
 	</Dialog.Content>
 </Dialog.Root>

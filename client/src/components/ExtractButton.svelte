@@ -85,9 +85,8 @@
 	});
 </script>
 
-<div class="p-4 flex items-center gap-4">
-	<div class="">
-		<label class="mr-2">Select output format:</label>
+<div class=" flex items-center gap-4">
+	<div class="flex">
 		<select bind:value={selectedFormat} class="p-2 border rounded">
 			<option value="xlsx">Excel (.xlsx)</option>
 			<option value="csv">CSV</option>
