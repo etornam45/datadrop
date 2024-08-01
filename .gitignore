@@ -6,6 +6,9 @@ dist
 # Ignore original TypeScript files
 *.ts
 !*.config.ts
+
+!client/src/**/*.ts
+
 ./node_server/src/api/main.ts
 
 # Don't ignore encrypted files
