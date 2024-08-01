@@ -7,7 +7,6 @@ dist
 *.ts
 ./node_server/src/api/main.ts
 
-*.svelte
 # Don't ignore encrypted files
 !node_server/src/**/*.ts.enc
 
